@@ -16,6 +16,7 @@
         background-color: #000000;
         box-sizing: border-box;
         color: #cacaca;
+        scroll-behavior: smooth;
         line-height: 1.7;
         font-family: 'Heebo', sans-serif;
         margin: 0;
@@ -49,18 +50,21 @@
 
       .container {
         max-width: 100%;
-        max-width: 1270px;
+        max-width: 1200px;
         margin: 0 auto;
         padding: 0 20px;
       }
 
       .logo {
         vertical-align: middle;
-        max-height: 65px;
-        width: auto;
-        height: auto;
+        height: 40px;
+        width: 150px;
       }
 
+      header > .container > div > a:first-of-type {
+        width: 150px;
+        display: inline-block;
+      }
       .registration {
         float: right;
         background-color: #dd3333;
@@ -106,7 +110,7 @@
       }
 
       .single-content-wraper > div {
-        padding: 30px 30px 0;
+        padding: 30px;
       }
 
       .content_wrapper {
@@ -156,13 +160,168 @@
         margin: 0;
       }
 
+      .main_wrapper {
+        display: flex;
+        gap: 30px;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      #table {
+        overflow: visible;
+      }
+
+      table:first-of-type {
+        min-width: 400px;
+      }
+
+      .banner_container {
+        display: flex;
+        flex-direction: column;
+        max-width: 50%;
+        justify-content: center;
+        gap: 30px;
+      }
+
+      .main_content {
+        display: flex;
+        gap: 30px;
+      }
+
+      .banner_image {
+        width: 350px;
+      }
+
+      .banner_container > a {
+        background-color: #fffb00;
+        font-size: 1.875rem;
+        border-color: #46aeff;
+        border: 2px solid;
+        color: black;
+        font-weight: 600;
+        line-height: 1;
+        letter-spacing: 0;
+        padding: 12px 22px;
+        text-decoration: none;
+        text-align: center;
+      }
+
+      .list_titles > li > a {
+        text-decoration: none;
+      }
+
+      td > ul {
+        margin: 0;
+      }
+
+      td {
+        padding-top: 4px;
+        padding-bottom: 4px;
+      }
+
+      .center_image {
+        width: 60%;
+        margin: 20px 0;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .app_container, .giris_container, .kayit_container {
+        display: flex;
+        gap: 30px;
+        align-items: center;
+      }
+
+      .mobile_app {
+        width: 490px;
+      }
+
+      .kayit_container > img {
+        width: 30%;
+      }
+
+      .giris {
+        width: 270px;
+      }
+
+      .homepage {
+        width: 100%;
+      }
+
+      .bonuses {
+        height: 350px;
+      }
+
+      .kayit {
+        width: 325px;
+      }
+
+      @media (max-width: 1024px) {
+        .main_wrapper {
+          flex-direction: column;
+        }
+
+        .banner_container {
+          margin-bottom: 20px;
+        }
+
+        .kayit_container {
+          flex-direction: column;
+        }
+
+        .kayit_container > img, .kayit {
+          margin-bottom: 20px;
+          width: 60%;
+        }
+      }
+
       @media (max-width: 720px) {
         .logo {
           width: 120px;
         }
 
+        .kayit_container > img, .kayit{
+          width: 100%;
+        }
+
+        .app_container, .giris_container {
+          flex-direction: column;
+        }
+
+        .mobile_app, .giris{
+          margin-bottom: 20px;
+          width: 100%;
+        }
+
         .registration {
           padding: 10px 17px;
+        }
+
+        .main_content {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .banner_container {
+          max-width: 100%;
+          width: 100%;
+        }
+
+        .banner_container > img {
+          width: 100%;
+        }
+
+        #table {
+          overflow: auto;
+        }
+
+        table:first-of-type {
+        min-width: 4px;
+        }
+
+        .center_image, .banner_image {
+          width: 100%;
         }
       } 
     </style>
@@ -173,7 +332,7 @@
         <div class="container">
           <div>
             <a href="/">
-              <img src="images/logo.png" alt="logo" class="logo">
+              <amp-img width="150" height="40" layout="responsive" src="images/logo.png" alt="logo" class="logo"></amp-img>
             </a>
             <a href="/" class="registration">
               Bize Katıl!
@@ -189,7 +348,7 @@
                 <article>
                   <div class="single-content-wraper">
                     <div>
-                      <img src="images/homepage.jpg" alt="homepage" class="homepage">
+                      <amp-img width="1140" height="500" layout="responsive" src="images/homepage.jpg" alt="homepage" class="homepage"></amp-img>
                     </div>
                     <div class="content_wrapper">
                       <p>
@@ -198,13 +357,50 @@
                         yatırımcılarına gerekse dünya genelindeki yatırımcılara hizmet sunar.
                       </p>
                       <p>
-                          Avrupa’da birçok ülkede ofisi bulunan bu firmanın, ayrıca Avrupa’nın birçok
-                          spor kulübüyle de önemli lisans anlaşmaları mevcuttur. Firmaya dair kapsamlı
-                          bilgiler ise aşağıdakiler gibidir:
+                        Avrupa’da birçok ülkede ofisi bulunan bu firmanın, ayrıca Avrupa’nın birçok
+                        spor kulübüyle de önemli lisans anlaşmaları mevcuttur. Firmaya dair kapsamlı
+                        bilgiler ise aşağıdakiler gibidir:
                       </p>
-                      <div class="table_container">
-                        <table>
-                          <tbody>
+                      <div class="main_wrapper">
+                        <div class="text_container">
+                          <h2 id="adres">Paribahis Güncel Adres</h2>
+                          <div class="main_content">
+                            <div class="banner_container">
+                              <amp-img height="355" width="400" layout="responsive" src="images/bonus.webp" alt="banner" class="banner_image"></amp-img>
+                              <a href="/">PARIBAHIS GİRİŞ</a>
+                            </div>   
+                            <ul class="list_titles">
+                              <li><a href="#adres">Paribahis Güncel Adres</a></li>
+                              <li><a href="#bonus">Bonuslar</a></li>
+                              <li><a href="#bahis">Bahis Seçenekleri</a></li>
+                              <li><a href="#yatirimi">Bahis Yatırımı Nasıl Yapılır?</a></li>
+                              <li><a href="#casino">Casino Oyunları</a></li>
+                              <li><a href="#populer">Popüler Bahis Seçenekleri</a></li>
+                              <li><a href="#slot">Slot Oyunları</a></li>
+                              <li><a href="#canli">Canlı Oyunlar</a></li>
+                              <li><a href="#poker">Poker</a></li>
+                              <li><a href="#tombala">Tombala</a></li>
+                              <li><a href="#hesap">Hesap Oluşturma ve Giriş İşlemleri</a></li>
+                              <li><a href="#aktivasyonu">Hesap Aktivasyonu ve İptali</a></li>
+                              <li><a href="#arayuz">Arayüz ve Tasarım Özellikleri</a></li>
+                              <li><a href="#para">Para Yatırma ve Çekme İşlemleri</a></li>
+                              <li><a href="#arayuz">Arayüz ve Tasarım Özellikleri</a></li>
+                              <li><a href="#mobil">Paribahis Mobil Uygulama</a></li>
+                              <li><a href="#musteri">Paribahis Müşteri Hizmetleri</a></li>
+                              <li><a href="#sss">Sıkça Sorulan Sorular</a></li>
+                            </ul>
+                          </div>
+                          <p>
+                            Yeni adreslerin takip edilmesi ise özellikle henüz Paribahis’le yeni
+                            tanışmış ve aynı zamanda sanal bahis dünyasına da yeni atılmış olan
+                            yatırımcılar için son derece zorlu bir durumdur. Böyle bir durum karşısında
+                            ise yapılması gereken en önemli aksiyon, aşağıdaki giriş adresi bulma
+                            talimatları ve seçeneklerini değerlendirmektir:
+                          </p>
+                        </div>
+                        <div class="table_container" id="table">
+                          <table>
+                            <tbody>
                               <tr>
                                   <td>
                                           Resmi Site Adresi
@@ -325,36 +521,29 @@
                                           TRY, EUR
                                   </td>
                               </tr>
-                          </tbody>
-                        </table>
+                            </tbody>
+                          </table>
+                        </div>
                       </div>
-                      <h2 id="adres">Paribahis Güncel Adres</h2>
-                      <p>
-                          Yeni adreslerin takip edilmesi ise özellikle henüz Paribahis’le yeni
-                          tanışmış ve aynı zamanda sanal bahis dünyasına da yeni atılmış olan
-                          yatırımcılar için son derece zorlu bir durumdur. Böyle bir durum karşısında
-                          ise yapılması gereken en önemli aksiyon, aşağıdaki giriş adresi bulma
-                          talimatları ve seçeneklerini değerlendirmektir:
-                      </p>
                       <ul>
-                      <li>İlk olarak Paribahis’le anlaşmalı olan sitemiz, güncel adresin temini
-                          açısından en temel kanallardan biridir. Yatırımcılar sitemizi favorilere
-                          eklemeleri durumunda her an güncel adrese ulaşabilirler. Bir adresin
-                          değişiminin hemen ardından yeni adres sitemizde sunulmaktadır.
-                      </li>
-                      <li>Adres temini konusunda kullanılabilecek olan bir diğer kanal ise SMS
-                          veya e-posta kanalıdır. Eğer üyelik işlemleri sırasında doğru cep telefonu
-                          ve e-mail adresi bilgilerinizi sisteme tanımlarsanız, en güncel adres zaten
-                          yapılan her değişiklikle birlikte tarafınıza iletilecektir.
-                      </li>
-                      <li>Sosyal medyanın da önemli bir adres temin kanalı olduğunu söylemek
-                          doğru olacaktır. Paribahis’in Twitter, Facebook, Instagram vb. sayfalarını
-                          takip etmeniz durumunda direkt olarak karşınıza güncel adresler çıkacaktır.
-                      </li>
-                      <li>Mobil uygulamayı indirerek de aslında hiçbir şekilde giriş adresi
-                          derdiyle uğraşmadan, telefonunuzdan her an Paribahis’e ulaşma imkanını elde
-                          edebilirsiniz.
-                      </li>
+                        <li>İlk olarak Paribahis’le anlaşmalı olan sitemiz, güncel adresin temini
+                            açısından en temel kanallardan biridir. Yatırımcılar sitemizi favorilere
+                            eklemeleri durumunda her an güncel adrese ulaşabilirler. Bir adresin
+                            değişiminin hemen ardından yeni adres sitemizde sunulmaktadır.
+                        </li>
+                        <li>Adres temini konusunda kullanılabilecek olan bir diğer kanal ise SMS
+                            veya e-posta kanalıdır. Eğer üyelik işlemleri sırasında doğru cep telefonu
+                            ve e-mail adresi bilgilerinizi sisteme tanımlarsanız, en güncel adres zaten
+                            yapılan her değişiklikle birlikte tarafınıza iletilecektir.
+                        </li>
+                        <li>Sosyal medyanın da önemli bir adres temin kanalı olduğunu söylemek
+                            doğru olacaktır. Paribahis’in Twitter, Facebook, Instagram vb. sayfalarını
+                            takip etmeniz durumunda direkt olarak karşınıza güncel adresler çıkacaktır.
+                        </li>
+                        <li>Mobil uygulamayı indirerek de aslında hiçbir şekilde giriş adresi
+                            derdiyle uğraşmadan, telefonunuzdan her an Paribahis’e ulaşma imkanını elde
+                            edebilirsiniz.
+                        </li>
                       </ul>
                       <h2 id="bonus">Bonuslar</h2>
                       <p>
@@ -364,6 +553,7 @@
                           bonusu, yatırım bonusu, haftanın belirli günlerine özel bonuslar, üyelik
                           bonuslar gibi türlerdir.
                       </p>
+                      <amp-img width="940" height="400" layout="responsive" src="images/bonus.webp" alt="bonuses" class="bonuses center_image"></amp-img>
                       <p>
                           <strong>Yatırım Bonusu</strong>: Paribahis 'in avantajlı yatırım bonusları
                           sayesinde hesabınıza yatırdığınız tutarın üstüne ekstra bonus
@@ -543,6 +733,7 @@
                       </table>
                       </div>
                       <h3 id="yatirimi">Paribahis’te Bahis Yatırımı Nasıl Yapılır?</h3>
+                      <amp-img height="388" width="684" layout="responsive" src="images/paribahis_bahis.png" alt="bahis" class="center_image"></amp-img>
                       <p>
                           Paribahis bünyesinde spor veya Casino ya da diğer oyunlara dair yatırım
                           yapmak istiyorsanız hemen aşağıdaki adımları takip edebilirsiniz:
@@ -897,6 +1088,7 @@
                       </table>
                       </div>
                       <h3 id="populer">Popüler Bahis Seçenekleri</h3>
+                      <amp-img width="940" height="400" layout="responsive" src="images/paribahis_casino.jpg" alt="casino" class="center_image"></amp-img>
                       <p>
                           Paribahis bünyesinde popüler olan birçok bahis seçeneği vardır ve bunların
                           en temelinde de slot oyunları gelir. Slot oyunlarında öne çıkan oyun
@@ -925,6 +1117,7 @@
                           Paribahis bu konuda birçok yatırım seçeneğini üyelere sunar. Genel manada
                           slot oyunlarına dair öne çıkan detaylar ise aşağıdakiler gibidir:
                       </p>
+                      <amp-img height="388" width="684" layout="responsive" src="images/paribahis_slots.jpg" alt="slots" class="center_image"></amp-img>
                       <p>
                           Slot oyunları birdenbir gelir sağlayan oyunlardır ve bir anda 1000 katı
                           kadar kazanç sağlamanıza yardımcı olabilirler.
@@ -977,6 +1170,7 @@
                           strateji oyunudur. Poker, farklı çeşitleri ve oynama şekilleriyle oyunculara
                           birçok seçenek sunar ve hem şans hem de yetenek gerektiren bir oyundur.
                       </p>
+                      <amp-img height="388" width="684" layout="responsive" src="images/paribahis_poker.jpg" alt="poker" class="center_image"></amp-img>
                       <p>
                           Yatırımcılar Poker oyunlarında gerek bireysel gerekse canlı lobiler özelinde
                           yatırım gerçekleştirebilirler. Poker oyunlarına dair seçenekler ise şu
@@ -1005,27 +1199,33 @@
                           birçok oyun seçeneğinden yararlanmak söz konusudur.</li>
                       </ul>
                       <h2 id="hesap">Hesap Oluşturma ve Giriş İşlemleri</h2>
-                      <p>
-                          Hesap oluşturma ve giriş işlemleri konusunda yatırımcıların dikkat etmeleri
-                          gereken birçok detay vardır ve bu detaylar şu şekildedir:
-                      </p>
-                      <ul>
-                      <li>Hesap oluşturma işlemleri için öncelikle “Üye” ol butonu ile ön kayıt
-                          formunu açmanız gerekir.</li>
-                      <li>Ön kayıt formunda siteye giriş işlemleri için kullanıcı oluşturmanız
-                          önemlidir.</li>
-                          <li>Hemen ardından sistem sizi direkt olarak hesabınıza aktarır.</li>
-                      <li>Hesabınızda eksik olan üyelik bilgilerinizi tamamlamanız son derece
-                          büyük önem taşır.</li>
-                      <li>Eksik olan üyelik bilgilerinin tamamlanmasının hemen ardından ise
-                          hesap aktivasyon süreci başlar.</li>
-                      <li>Hesap aktivasyon süreci, hesap doğrulama sürecinden tamamen
-                          farklıdır.</li>
-                      <li>Aktivasyon sürecinde e-posta ve cep telefonu bilgilerinizi
-                          doğrulamanız gerekir.</li>
-                      <li>Tüm bu işlemlerin ardından artık yatırımcıların hesap doğrulama
-                          aşamasına geçmeleri gerekir.</li>
-                      </ul>
+                      <div class="kayit_container">
+                        <div>
+                          <p>
+                              Hesap oluşturma ve giriş işlemleri konusunda yatırımcıların dikkat etmeleri
+                              gereken birçok detay vardır ve bu detaylar şu şekildedir:
+                          </p>
+                          <ul>
+                            <li>Hesap oluşturma işlemleri için öncelikle “Üye” ol butonu ile ön kayıt
+                                formunu açmanız gerekir.</li>
+                            <li>Ön kayıt formunda siteye giriş işlemleri için kullanıcı oluşturmanız
+                                önemlidir.</li>
+                                <li>Hemen ardından sistem sizi direkt olarak hesabınıza aktarır.</li>
+                            <li>Hesabınızda eksik olan üyelik bilgilerinizi tamamlamanız son derece
+                                büyük önem taşır.</li>
+                            <li>Eksik olan üyelik bilgilerinin tamamlanmasının hemen ardından ise
+                                hesap aktivasyon süreci başlar.</li>
+                            <li>Hesap aktivasyon süreci, hesap doğrulama sürecinden tamamen
+                                farklıdır.</li>
+                            <li>Aktivasyon sürecinde e-posta ve cep telefonu bilgilerinizi
+                                doğrulamanız gerekir.</li>
+                            <li>Tüm bu işlemlerin ardından artık yatırımcıların hesap doğrulama
+                                aşamasına geçmeleri gerekir.
+                              </li>
+                          </ul>
+                        </div>
+                        <amp-img src="images/paribahis_kayit.jpg" class="kayit" alt="kayit" height="305" width="325" layout="responsive"></amp-img>
+                      </div>
                       <p>
                           Hesap doğrulama işlemi 3 aşamalı bir işlemdir ve bu 3 aşama ise şu
                           şekildedir:
@@ -1050,14 +1250,19 @@
                           </li>
                       </ol>
                       <h2 id="aktivasyonu">Hesap Aktivasyonu ve İptali</h2>
-                      <p>
+                      <div class="giris_container">
+                        <p>
                           Hesap aktivasyonu, e-posta ve cep telefonu bilgilerinizin doğru olup
                           olmadığının kontrolü adına gerçekleşen bir işlemdir. Aktivasyon işlemlerinin
                           yapılabilmesi adına cep telefonunuza SMS ve e-posta adresinize de doğrulama
                           linki gönderilir. Tüm bunların yanı sıra yatırımcılar, herhangi bir nedenden
                           ötürü hesap iptali de yapabilirler. Hesap iptali için de canlı desteğe
                           başvuru yapmak ve herhangi bir neden olmadan hesap iptali yapmak mümkündür.
-                      </p>
+                        </p>
+                        <div>
+                          <amp-img height="267" width="285" layout="responsive" src="images/paribahis_giris.png" alt="giris" class="giris"></amp-img>
+                        </div>
+                      </div>
                       <h2 id="arayuz">Arayüz ve Tasarım Özellikleri</h2>
                       <p>
                           Arayüz ve tasarım olarak Paribahis, en kolay çözülebilen yapılardan birine
@@ -1085,6 +1290,7 @@
                       <li>Sonrasında ise yatırımcıların para yatırma kanalına göre gerekli
                           talimatları yerine getirmesi ve doğrulamaları yapması önemlidir.</li>
                       </ul>
+                      <amp-img height="78" width="684" layout="responsive" src="images/paribahis_para.png" alt="payments" class="center_image"></amp-img>
                       <p>Paribahis’ta para çekmek adına uygulanması gereken adımlar ise şunlardır:</p>
                       <ul>
                       <li>“Hesabım” kısmında “Para Çekme” sayfası yer alır ve bu sayfaya
@@ -1095,7 +1301,8 @@
                       <li>Bu işlemlerin hemen ardından da dakikalar içerisinde tutar tarafınıza
                           iletilecektir.</li>
                       </ul>
-                      <!-- <table>
+                      <div class="table_container">
+                        <table>
                           <tbody>
                               <tr>
                                   <td>
@@ -1208,7 +1415,8 @@
                                   </td>
                               </tr>
                           </tbody>
-                      </table> -->
+                      </table>
+                      </div>
                       <h2 id="mobil">Paribahis Mobil Uygulama ve İndirme İşlemleri</h2>
                       <p>
                           Paribahis mobil uygulaması sayesinde yatırımcıların son derece kolay bir
@@ -1219,19 +1427,23 @@
                       <p>
                           Uygulamanın indirme ve kurulum aşamaları ise şu şekildedir:
                       </p>
-                      <ol>
-                      <li>Uygulamayı ilk olarak Paribahis sitesinde yer alan mobil uygulama
-                          bölümünden indirmeniz gerekir.</li>
-                      <li>Bu kısımda cihazınız Android ise Android, IOS ise IOS simgelerini
-                          seçmeniz gerekir.</li>
-                          <li>Hemen ardından karşınıza QR kod çıkar.</li>
-                      <li>Bu QR kodu cep telefonunuzun kamerasına okutmanızla birlikte indirme
-                          işlemi başlar.</li>
-                      <li>İndirilen uygulama dosyasını açmaya çalışırsanız, uygulama direkt
-                          olarak kurulamya başlayacaktır.</li>
-                      <li>Hemen sonrasında ise uygulamaya mevcut kullanıcı adı ve
-                          bilgilerinizle birlikte giriş yapabilirsiniz.</li>
-                      </ol>
+                      <div class="app_container">
+                        <ol>
+                          <li>Uygulamayı ilk olarak Paribahis sitesinde yer alan mobil uygulama
+                              bölümünden indirmeniz gerekir.</li>
+                          <li>Bu kısımda cihazınız Android ise Android, IOS ise IOS simgelerini
+                              seçmeniz gerekir.</li>
+                              <li>Hemen ardından karşınıza QR kod çıkar.</li>
+                          <li>Bu QR kodu cep telefonunuzun kamerasına okutmanızla birlikte indirme
+                              işlemi başlar.</li>
+                          <li>İndirilen uygulama dosyasını açmaya çalışırsanız, uygulama direkt
+                              olarak kurulamya başlayacaktır.</li>
+                          <li>Hemen sonrasında ise uygulamaya mevcut kullanıcı adı ve
+                              bilgilerinizle birlikte giriş yapabilirsiniz.
+                          </li>
+                        </ol>
+                        <amp-img height="490" width="490" layout="responsive" class="mobile_app" src="images/paribahis_app.jpg" alt="mobile application"></amp-img>
+                      </div>
                       <p>
                           <strong>ÖNEMLİ NOT:</strong>Uygulama yalnızca IOS 10.0 sıfır işletim
                           sistemine sahip cihazlarda ve Android 6.5 işletim sistemi ve üstü cihazlarda
